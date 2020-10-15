@@ -8,9 +8,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ asset ('/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
+        <style> 
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -21,7 +22,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                padding-top: 180px;
             }
 
             .flex-center {
@@ -79,9 +80,12 @@
                 </div>
             @endif
 
-            <div class="content"> 
+            <div class="container"> 
                 @yield('content')
             </div>
         </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>                     
     </body>
 </html>

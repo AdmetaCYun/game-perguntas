@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 Route::get('/game', function () {
     return view('game');
-});
+})->name('game');
 Route::get('/end-game', function () {
     return view('end-game');
-});
+})->name('end-game');
 
