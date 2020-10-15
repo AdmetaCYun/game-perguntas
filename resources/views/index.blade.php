@@ -6,11 +6,10 @@
 
         <h1>Jogo de perguntas e respostas</h1>
 
-        <form>
-
+        <form action="{{ route('start-game') }}" method="GET">
             <div class="form-group">
                 <label for="exampleInputEmail1">Digite seu nome</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" name="name" >
                 <small id="emailHelp" class="form-text text-muted">Esse nome vai ser utilizado no game</small>
             </div>
 

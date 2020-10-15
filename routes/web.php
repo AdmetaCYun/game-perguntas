@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-Route::get('/game', function () {
-    return view('game');
-})->name('game');
-Route::get('/end-game', function () {
-    return view('end-game');
-})->name('end-game');
+Route::get('/', 'GameController@index')->name('index');
 
+Route::get('/game/{name}', 'GameController@game')->name('game');
+
+Route::get('/end-game', 'GameController@endGame')->name('end-game');
+
+Route::get('/game-start', 'GameController@store')->name('start-game');

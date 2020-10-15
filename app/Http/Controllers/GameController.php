@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -13,9 +14,22 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
+    public function game($name)
+    {
+        $questions = Question::all();
+        dd($questions);
+        return view('game' , [
+            'user' =>  $name,
+        ]);
+    }
+
+    public function endGame()
+    {
+        return view('end-game');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +48,13 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $name = $request->name; 
+       if ($name == null || $name == "") {
+           $name = "Convidado";
+       } 
+       return redirect()->route('game', [
+           'name'=> $name,
+       ] );
     }
 
     /**
